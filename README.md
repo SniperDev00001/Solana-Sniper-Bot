@@ -1,5 +1,6 @@
 <div align="center">
-    <h3 align="center">Solana Crypto Sniper</h3>
+    <h3 align="center">🎯 Solana Crypto Sniper 🎯</h3>
+    A fast and efficient bot written in NodeJS to automatically buy and sell tokens on the blockchain as soon as liquidity is added and trade is enabled.
 </div>
 
 ## Table Of Contents
@@ -28,8 +29,6 @@
 ## Description
 ![Alt Text](https://i.imgur.com/8M3XqVQ.gif)
 
-A fast and efficient bot written in NodeJS to automatically buy and sell tokens on the blockchain as soon as liquidity is added and trade is enabled.
-<br><br>
 The bot is extremely fast as long as you use a **good** node and not a public one. With a node from Quicknode you can expect a buy/sell transaction in less than 5 seconds.
 <br><br>
 The bot uploaded on github is the **lite** version of the real bot. 
@@ -73,6 +72,7 @@ Additional features supported by the **premium** version:
 - Metis
 - Fantom
 - Dogechain
+- Solana
 
 If you wish to change the blockchain the bot will operate on, just change the WSS_NODE endpoint in config.ini to the right endpoint.
 
