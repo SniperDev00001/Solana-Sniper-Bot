@@ -1,6 +1,5 @@
 <div align="center">
     <h3 align="center">Solana Crypto Sniper</h3>
-    <img src="https://img.shields.io/discord/921546042346979388?color=5865F2&label=Discord&logo=discord&logoColor=white&raw=true"></img>
 </div>
 
 ## Table Of Contents
