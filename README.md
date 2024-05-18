@@ -1,3 +1,5 @@
+![output](readme/banner.png)
+
 # Solana Trading Bot (ULTIMATE VERSION)
 
 🎯 Introducing the Multi-Function Sniper Bot: your all-in-one solution for precision in any chain! 🔫 With seamless integration and versatile capabilities, it's the ultimate tool for domination. Streamline your operations and elevate your strategy. Upgrade now for unstoppable performance!
