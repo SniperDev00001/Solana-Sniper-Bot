@@ -1,4 +1,4 @@
-# Solana Trading Bot (Beta)
+# Solana Trading Bot (ULTIMATE VERSION)
 
 🎯 Introducing the Multi-Function Sniper Bot: your all-in-one solution for precision in any chain! 🔫 With seamless integration and versatile capabilities, it's the ultimate tool for domination. Streamline your operations and elevate your strategy. Upgrade now for unstoppable performance!
 
@@ -106,7 +106,7 @@ Note: When using snipe list filters below will be disabled.
 - `MAX_POOL_SIZE` - Bot will buy only if the pool size is less than or equal the specified amount.
   - Set `0` to disable.
 
-## Warp transactions (beta)
+## Warp transactions
 
 In case you experience a lot of failed transactions or transaction performance is too slow, you can try using `warp` for executing transactions.
 Warp is hosted service that executes transactions using integrations with third party providers.
