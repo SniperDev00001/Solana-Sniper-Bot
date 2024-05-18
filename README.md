@@ -1,340 +1,149 @@
-<div align="center">
-    <h3 align="center">🎯 Solana Crypto Sniper 🎯</h3>
-    A **fast and efficient** bot written in NodeJS to automatically **buy and sell** tokens on the blockchain as soon as liquidity is added and trade is enabled.
-</div>
+# Solana Trading Bot (Beta)
 
-## Table Of Contents
+🎯 Introducing the Multi-Function Sniper Bot: your all-in-one solution for precision in any chain! 🔫 With seamless integration and versatile capabilities, it's the ultimate tool for domination. Streamline your operations and elevate your strategy. Upgrade now for unstoppable performance!
 
-<ul>
-    <li>
-		<a href="#description">Description</a>
-		<ul>
-			<li><a href="#features">Features</a></li>
-			<li><a href="#supported-chains">Supported chains</a></li>
-			<li><a href="#supported-tokens">Supported tokens</a></li>
-		</ul>
-	</li>
-    <li>
-        <a href="#getting-started">Getting started</a>
-        <ul>
-            <li><a href="#requirements">Requirements</a></li>
-            <li><a href="#configuration">Configuration</a></li>
-        </ul>
-    </li>
-	<li><a href="#go-premium">Go Premium</a></li>
-	<li><a href="#contact">Contact</a></li>
-</ul>
+🎯 Ready to revolutionize your strategy? Contact me now to get your hands on the Multi-Function Sniper Bot! 🔫 Unlock unstoppable performance and dominate across any chain. Let's elevate your game together!
 
-
-## Description
-![Alt Text](https://i.imgur.com/8M3XqVQ.gif)
-
-The bot is extremely fast as long as you use a **good** node and not a public one. With a node from Quicknode you can expect a buy/sell transaction in less than 5 seconds.
-<br><br>
-The bot uploaded on github is the **lite** version of the real bot. 
-You do **not** get all of the features from the premium version.
-
-### Features
-
-Current features supported by the **FREE** version:
-
-- [x] Buying (BNB & ETH pairs only)
-- [x] Gas estimation system
-- [x] Regular liquidity sniper
-
-Additional features supported by the **premium** version:
-- [x] Buying (ALL pairs)
-- [x] Multi blockchain support.
-- [x] Bytecode checker / blocker.
-- [x] MethodID waiter.
-- [x] Multi-buy mode (all transactions are in the same block). 
-- [x] Wrapped mode for any ETH-like token (BNB, MATIC, etc..). 
-- [x] Tax checker (all pairs are supported)
-- [x] Pinksale / dxsale support.
-- [x] Sell using a delay
-- [x] Sell using the space key
-- [x] Auto / manual selling
-- [x] Mempool sniping mode.
-- [x] Block-offset system
-- [x] Auto updates (updates are done automatically without the need of a re-download)
-- [x] Trailing auto-sell.
-- [x] Support
-
-
-### Supported chains
-- Binance Smart Chain
-- Arbitrum
-- Avalanche
-- Ethereum
-- Polygon
-- Cronos
-- Milkomeda
-- Metis
-- Fantom
-- Dogechain
-- Solana
-
-If you wish to change the blockchain the bot will operate on, just change the WSS_NODE endpoint in config.ini to the right endpoint.
-
-#### Public WSS Nodes
-- Binance Smart Chain: wss://bsc-ws-node.nariox.org:443
-- Ethereum: wss://main-light.eth.linkpool.io/ws
-- Polygon: wss://rpc-mainnet.matic.network
-
-_Note: The nodes listed above are free nodes and are NOT always online._
-
-### Supported tokens
-The bot currently supports any token using the uniswap interface.
-
-## Getting Started
-### Requirements
-<ul>
-    <li>Windows 10 / Ubuntu / Mac OS</li>
-	<li>Latest <a href="https://nodejs.org/en/download/">NodeJS</a> installed.</li>
-	<li>Latest <a href="https://git-scm.com/downloads">Git</a> installed.</li>
-	<li>A <b>decent</b> internet connection.</li>
-	<li>
-		A <b>decent</b> BSC node, preferably paid, but you may also use free ones.
-		<ul>
-			<li><a href="https://www.quicknode.com/">Quicknode (paid)</a></li>
-			<li><a href="https://www.moralis.io/">Moralis (free)</a></li>
-		</ul>
-	</li>
-	<li>A crypto wallet with a private key. (it is recommended to create a new wallet to use with this bot)</li>
-</ul>
-
-### Configuration
-
-```ini
-[WALLET]
-; This is your BSC wallet's private key.
-SECRET_KEY=private_wallet_key
-
-; The uptime of this node is pretty bad, you should consider using a private node.
-WSS_NODE=wss://bsc-ws-node.nariox.org:443
-
-
-[CONTRACTS]
-; These variables support some pre-defined contracts (BNB, ETH, BUSD). 
-; For other contracts you'll have to specify the contract address yourself.
-INPUT=BNB
-OUTPUT=BUSD
-
-
-[TRANSACTION]
-
-GAS_LIMIT=500000
-GAS_PRICE=5
-
-; This variable is the amount of crypto you wish to use with the input contract.
-; If for example you use WBNB as input, you will have to use WBNB's format.
-AMOUNT_IN=0.0033
-
-BUY_SLIPPAGE=10
-```
-
-### Usage
-To launch the bot use the command ```node index.js```
-
-#### Premium parameters
-
-##### General
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Description</th>
-    <th>Accepts</th>
-  </tr>
-  <tr>
-    <td>--buy-only</td>
-    <td>Enables manual buy mode. This will only buy the token and then exit.</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--sell-only</td>
-    <td>Enables manual sell mode. This will only sell the token and then exit.</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--input</td>
-    <td>Overwrites the input parameter in the config.</td>
-    <td><code>contract address</code></td>
-  </tr>
-  <tr>
-    <td>--output</td>
-    <td>Overwrites the output parameter in the config.</td>
-    <td><code>contract address</code></td>
-  </tr>
-  <tr>
-    <td>--config</td>
-    <td>Used to specify a different config path (used for multi configs setup).</td>
-    <td><code>string</code></td>
-  </tr>
-  <tr>
-    <td>--force-approve</td>
-    <td>Forces the approve transaction for the input/output. (used for debugging)</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--simulate</td>
-    <td>Simulate your current config as a real transaction.</td>
-    <td>-</td>
-  </tr>
-</table>
-
-##### Transaction
-
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Description</th>
-    <th>Accepts</th>
-  </tr>
-  <tr>
-    <td>--wrapped</td>
-    <td>Uses the wrapped version of the bnb/eth token. (available for all blockchains)</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--block-offset</td>
-    <td>Waits an amount of blocks before sending out the buy transaction.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--spam</td>
-    <td>Sends an x amount of transactions at the same time. (spam buy)</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--amount_in</td>
-    <td>Used to specify the amount you wish to spend with your INPUT token.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--amount_out</td>
-    <td>Used to specify the amount you wish to buy from your OUTPUT token.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--min_liq</td>
-    <td>Used to specify the minimum liquidity before the bot starts to buy.</td>
-    <td><code>number</code></td>
-  </tr>
-</table>
-
-##### Tax
-
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Description</th>
-    <th>Accepts</th>
-  </tr>
-  <tr>
-    <td>--verify-tax</td>
-    <td>Checks wether the taxes for buying / selling does not exceed the limits configured.</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--max-buy-tax</td>
-    <td>Sets the max allowed buy tax.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--max-sell-tax</td>
-    <td>Sets the max allowed sell tax.</td>
-    <td><code>number</code></td>
-  </tr>
-</table>
-
-##### Gas
-
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Description</th>
-    <th>Accepts</th>
-  </tr>
-  <tr>
-    <td>--gas-price</td>
-    <td>Sets the gas price.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--gas-limit</td>
-    <td>Sets the gas limit.</td>
-    <td><code>number</code></td>
-  </tr>
-</table>
-
-##### Slippage
-
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Description</th>
-    <th>Accepts</th>
-  </tr>
-  <tr>
-    <td>--buy-slippage</td>
-    <td>Sets the buy slippage.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--sell-slippage</td>
-    <td>Sets the sell slippage.</td>
-    <td><code>number</code></td>
-  </tr>
-</table>
-
-##### Autosell
-
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Description</th>
-    <th>Accepts</th>
-  </tr>
-  <tr>
-    <td>--sell-with-multiplier</td>
-    <td>Enables the sell with multiplier autosell mode.</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--sell-multiplier</td>
-    <td>Sets the multiplier to sell at for the sell with multiplier mode.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr><td></td><td></td><td></td></tr>
-  <tr>
-    <td>--sell-with-delay</td>
-    <td>Enables the sell with delay autosell mode.</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--sell-delay</td>
-    <td>Sets the delay to sell with for the sell with delay mode.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr><td></td><td></td><td></td></tr>
-  <tr>
-    <td>--sell-on-loss</td>
-    <td>Enables the sell on loss autosell mode.</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>--sl-minimum-multiplier</td>
-    <td>Sets the minimum multiplier for the sell on loss mode to start.</td>
-    <td><code>number</code></td>
-  </tr>
-  <tr>
-    <td>--sl-percentage</td>
-    <td>Sets the percentage of the maximum impact on your multiplier.</td>
-    <td><code>number</code></td>
-  </tr>
-</table>
-
-### Contact
 <ul>
 	<li>Telegram: https://t.me/sol_raydium_bot</li>
 </ul>
+
+## Setup
+
+To run the script you need to:
+
+- Create a new empty Solana wallet
+- Transfer some SOL to it.
+- Convert some SOL to USDC or WSOL.
+  - You need USDC or WSOL depending on the configuration set below.
+- Configure the script by updating `.env.copy` file (remove the .copy from the file name when done).
+  - Check [Configuration](#configuration) section bellow
+- Install dependencies by typing: `npm install`
+- Run the script by typing: `npm run start` in terminal
+
+You should see the following output:  
+![output](readme/output.png)
+
+### Configuration
+
+#### Wallet
+
+- `PRIVATE_KEY` - Your wallet's private key.
+
+#### Connection
+
+- `RPC_ENDPOINT` - HTTPS RPC endpoint for interacting with the Solana network.
+- `RPC_WEBSOCKET_ENDPOINT` - WebSocket RPC endpoint for real-time updates from the Solana network.
+- `COMMITMENT_LEVEL`- The commitment level of transactions (e.g., "finalized" for the highest level of security).
+
+#### Bot
+
+- `LOG_LEVEL` - Set logging level, e.g., `info`, `debug`, `trace`, etc.
+- `ONE_TOKEN_AT_A_TIME` - Set to `true` to process buying one token at a time.
+- `COMPUTE_UNIT_LIMIT` - Compute limit used to calculate fees.
+- `COMPUTE_UNIT_PRICE` - Compute price used to calculate fees.
+- `PRE_LOAD_EXISTING_MARKETS` - Bot will load all existing markets in memory on start.
+  - This option should not be used with public RPC.
+- `CACHE_NEW_MARKETS` - Set to `true` to cache new markets.
+  - This option should not be used with public RPC.
+- `TRANSACTION_EXECUTOR` - Set to `warp` to use warp infrastructure for executing transactions, or set it to jito to use JSON-RPC jito executer
+  - For more details checkout [warp](#warp-transactions-beta) section
+- `CUSTOM_FEE` - If using warp or jito executors this value will be used for transaction fees instead of `COMPUTE_UNIT_LIMIT` and `COMPUTE_UNIT_LIMIT`
+  - Minimum value is 0.0001 SOL, but we recommend using 0.006 SOL or above
+  - On top of this fee, minimal solana network fee will be applied
+
+#### Buy
+
+- `QUOTE_MINT` - Which pools to snipe, USDC or WSOL.
+- `QUOTE_AMOUNT` - Amount used to buy each new token.
+- `AUTO_BUY_DELAY` - Delay in milliseconds before buying a token.
+- `MAX_BUY_RETRIES` - Maximum number of retries for buying a token.
+- `BUY_SLIPPAGE` - Slippage %
+
+#### Sell
+
+- `AUTO_SELL` - Set to `true` to enable automatic selling of tokens.
+  - If you want to manually sell bought tokens, disable this option.
+- `MAX_SELL_RETRIES` - Maximum number of retries for selling a token.
+- `AUTO_SELL_DELAY` - Delay in milliseconds before auto-selling a token.
+- `PRICE_CHECK_INTERVAL` - Interval in milliseconds for checking the take profit and stop loss conditions.
+  - Set to zero to disable take profit and stop loss.
+- `PRICE_CHECK_DURATION` - Time in milliseconds to wait for stop loss/take profit conditions.
+  - If you don't reach profit or loss bot will auto sell after this time.
+  - Set to zero to disable take profit and stop loss.
+- `TAKE_PROFIT` - Percentage profit at which to take profit.
+  - Take profit is calculated based on quote mint.
+- `STOP_LOSS` - Percentage loss at which to stop the loss.
+  - Stop loss is calculated based on quote mint.
+- `SELL_SLIPPAGE` - Slippage %.
+
+#### Snipe list
+
+- `USE_SNIPE_LIST` - Set to `true` to enable buying only tokens listed in `snipe-list.txt`.
+  - Pool must not exist before the bot starts.
+  - If token can be traded before bot starts nothing will happen. Bot will not buy the token.
+- `SNIPE_LIST_REFRESH_INTERVAL` - Interval in milliseconds to refresh the snipe list.
+  - You can update snipe list while bot is running. It will pickup the new changes each time it does refresh.
+
+Note: When using snipe list filters below will be disabled.
+
+#### Filters
+
+- `FILTER_CHECK_INTERVAL` - Interval in milliseconds for checking if pool match the filters.
+  - Set to zero to disable filters.
+- `FILTER_CHECK_DURATION` - Time in milliseconds to wait for pool to match the filters.
+  - If pool doesn't match the filter buy will not happen.
+  - Set to zero to disable filters.
+- `CONSECUTIVE_FILTER_MATCHES` - How many times in a row pool needs to match the filters.
+  - This is useful because when pool is burned (and rugged), other filters may not report the same behavior. eg. pool size may still have old value
+- `CHECK_IF_MUTABLE` - Set to `true` to buy tokens only if their metadata are not mutable.
+- `CHECK_IF_SOCIALS` - Set to `true` to buy tokens only if they have at least 1 social.
+- `CHECK_IF_MINT_IS_RENOUNCED` - Set to `true` to buy tokens only if their mint is renounced.
+- `CHECK_IF_FREEZABLE` - Set to `true` to buy tokens only if they are not freezable.
+- `CHECK_IF_BURNED` - Set to `true` to buy tokens only if their liquidity pool is burned.
+- `MIN_POOL_SIZE` - Bot will buy only if the pool size is greater than or equal the specified amount.
+  - Set `0` to disable.
+- `MAX_POOL_SIZE` - Bot will buy only if the pool size is less than or equal the specified amount.
+  - Set `0` to disable.
+
+## Warp transactions (beta)
+
+In case you experience a lot of failed transactions or transaction performance is too slow, you can try using `warp` for executing transactions.
+Warp is hosted service that executes transactions using integrations with third party providers.
+
+Using warp for transactions supports the team behind this project.
+
+### Security
+
+When using warp, transaction is sent to the hosted service.
+**Payload that is being sent will NOT contain your wallet private key**. Fee transaction is signed on your machine.
+Each request is processed by hosted service and sent to third party provider.
+**We don't store your transactions, nor we store your private key.**
+
+Note: Warp transactions are disabled by default.
+
+### Fees
+
+When using warp for transactions, fee is distributed between developers of warp and third party providers.
+In case TX fails, no fee will be taken from your account.
+
+## Common issues
+
+If you have an error which is not listed here, please create a new issue in this repository.
+To collect more information on an issue, please change `LOG_LEVEL` to `debug`.
+
+### Unsupported RPC node
+
+- If you see following error in your log file:  
+  `Error: 410 Gone:  {"jsonrpc":"2.0","error":{"code": 410, "message":"The RPC call or parameters have been disabled."}, "id": "986f3599-b2b7-47c4-b951-074c19842bad" }`  
+  it means your RPC node doesn't support methods needed to execute script.
+  - FIX: Change your RPC node. You can use Helius or Quicknode.
+
+### No token account
+
+- If you see following error in your log file:  
+  `Error: No SOL token account found in wallet: `  
+  it means that wallet you provided doesn't have USDC/WSOL token account.
+  - FIX: Go to dex and swap some SOL to USDC/WSOL. For example when you swap sol to wsol you should see it in wallet as shown below:
+
+![wsol](readme/wsol.png)
