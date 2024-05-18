@@ -1,20 +1,6 @@
 <div align="center">
     <h3 align="center">Solana Crypto Sniper</h3>
     <img src="https://img.shields.io/discord/921546042346979388?color=5865F2&label=Discord&logo=discord&logoColor=white&raw=true"></img>
-    <p align="center">
-        Simple yet fast and efficient sniper-bot running on the blockchain. 
-	<h3>Eryx Solana Edition out now! Check it out on the website: https://eryx.io.</h3><br>
-        <hr>
-        <a href="#getting-started">⬇️ Download Lite Version</a>
-        /
-        <a href="https://github.com/zookyy/bsc-sniper/issues">🐞 Report a bug</a>
-	/
-        <a href="https://eryx.io">🌐 Visit our website</a>
-	/
-        <a href="https://eryx.io/discord">💬 Join our Discord</a>
-	/
-	<a href="https://t.me/eryxcrypto">💬 Join our Telegram</a>
-    </p>
 </div>
 
 ## Table Of Contents
@@ -32,7 +18,6 @@
         <a href="#getting-started">Getting started</a>
         <ul>
             <li><a href="#requirements">Requirements</a></li>
-            <li><a href="#installation">Installation</a></li>
             <li><a href="#configuration">Configuration</a></li>
         </ul>
     </li>
