@@ -4,15 +4,18 @@
 
 🎯 Ready to revolutionize your strategy? Contact me now to get your hands on the Multi-Function Sniper Bot! 🔫 Unlock unstoppable performance and dominate across any chain. Let's elevate your game together!
 
+## Contact
 <ul>
 	<li>Telegram: https://t.me/sol_raydium_bot</li>
 </ul>
+
+🚀 Take the leap into precision with confidence! When you purchase the Multi-Function Sniper Bot, you're not just getting cutting-edge technology—you're getting full support. Our team is dedicated to ensuring you hit the ground running. From setup to optimization, we're with you every step of the way. Get ready to elevate your strategy like never before!
 
 ## Setup
 
 To run the script you need to:
 
-- Create a new empty Solana wallet
+- Create a new empty Solana wallet.
 - Transfer some SOL to it.
 - Convert some SOL to USDC or WSOL.
   - You need USDC or WSOL depending on the configuration set below.
