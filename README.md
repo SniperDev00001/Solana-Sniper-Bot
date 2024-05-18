@@ -62,8 +62,6 @@ Additional features supported by the **premium** version:
 - [x] Trailing auto-sell.
 - [x] Support
 
-You can view the latest feature list here: https://eryx.io/docs/#features
-
 
 ### Supported chains
 - Binance Smart Chain
