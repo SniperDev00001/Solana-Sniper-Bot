@@ -1,6 +1,6 @@
 <div align="center">
     <h3 align="center">🎯 Solana Crypto Sniper 🎯</h3>
-    A fast and efficient bot written in NodeJS to automatically buy and sell tokens on the blockchain as soon as liquidity is added and trade is enabled.
+    A **fast and efficient** bot written in NodeJS to automatically **buy and sell** tokens on the blockchain as soon as liquidity is added and trade is enabled.
 </div>
 
 ## Table Of Contents
